@@ -1,0 +1,35 @@
+ClrDraw
+ClrList L1
+66->dim(L1
+DelVar C
+For(A,1,11
+	For(B,1,6
+		C+1->C
+		Text(B6-6,A6-6,L1(C
+	End
+End
+DelVar A:DelVar B
+1->X:~1->Y:1->C
+Repeat K=45
+	Pt-On(X6-6,Y6+6
+	getKey->K
+	If Ans
+	Pt-Off(X6-6,Y6+6
+	sum(DeltaList(K={24,26->theta
+	If min(X+Ans!={0,12:Then
+		Ans+X->X
+		theta+C->C
+	End
+	sum(DeltaList(K={34,25->theta
+	If min(Y+Ans!={~7,0:Then
+		Ans+Y->Y
+		C-theta11->C
+	End
+	If K=21:Then
+		(L1(C)=0)->L1(C
+		Text(~Y6-6,X6-6,L1(C)
+	End
+End
+DelVar X:DelVar Y:DelVar C
+ClrDraw
+"
